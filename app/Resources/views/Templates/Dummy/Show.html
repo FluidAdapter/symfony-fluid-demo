@@ -1,0 +1,32 @@
+<f:layout name="Default" />
+
+<f:section name="Main">
+	<h1>Foo</h1>
+
+	<table>
+		<tbody>
+		<tr>
+			<th>Id</th>
+			<td>{dummy.id}</td>
+		</tr>
+		<tr>
+			<th>Name</th>
+			<td>{dummy.name}</td>
+		</tr>
+		</tbody>
+	</table>
+
+	<ul>
+		<li>
+			<f:link.route name="dummy_index">Back to the list</f:link.route>
+		</li>
+		<li>
+			<f:link.route name="dummy_edit" arguments="{id: dummy.id}">Edit</f:link.route>
+		</li>
+		<li>
+			<f:form form="{delete_form}">
+				<input type="submit" value="Delete">
+			</f:form>
+		</li>
+	</ul>
+</f:section>

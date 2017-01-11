@@ -1,0 +1,55 @@
+<f:layout name="Default"/>
+
+<f:section name="Main">
+	<h1>Dummy List</h1>
+
+	<table>
+		<thead>
+		<tr>
+			<th>Id</th>
+			<th>Name</th>
+			<th>Description</th>
+			<th>Number</th>
+			<th>Boolean</th>
+			<th>Actions</th>
+		</tr>
+		</thead>
+		<tbody>
+		<f:for each="{dummies}" as="dummy">
+			<tr>
+				<td>
+					<f:link.route name="dummy_show" arguments="{id: dummy.id}">
+						{dummy.id}
+					</f:link.route>
+				</td>
+				<td>{dummy.name}</td>
+				<td>{dummy.description}</td>
+				<td>{dummy.number}</td>
+				<td>{dummy.boolean}</td>
+				<td>
+					<ul>
+						<li>
+							<f:link.route name="dummy_show" arguments="{id: dummy.id}">
+								show
+							</f:link.route>
+						</li>
+						<li>
+							<f:link.route name="dummy_edit" arguments="{id: dummy.id}">
+								edit
+							</f:link.route>
+						</li>
+					</ul>
+				</td>
+			</tr>
+		</f:for>
+		</tbody>
+	</table>
+
+	<ul>
+		<li>
+			<f:link.route name="dummy_new">
+				Create a new dummy
+			</f:link.route>
+		</li>
+	</ul>
+</f:section>
